@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QRForge — Free QR Code Generator | URL, WiFi, vCard & More</title>
+  <meta name="description" content="Generate beautiful, customizable QR codes for free. Supports URLs, WiFi, vCard contacts, email, phone, SMS, calendar events & plain text. Download as PNG, SVG, or PDF.">
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="QRForge — Free QR Code Generator">
+  <meta property="og:description" content="Generate beautiful, customizable QR codes instantly. Supports 8+ formats. Free forever.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:url" content="https://psquare346.github.io/Generate-QR-Code-for-free/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QRForge — Free QR Code Generator">
+  <meta name="twitter:description" content="Generate beautiful, customizable QR codes instantly. Free forever.">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- External Libraries -->
+  <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-mesh"></div>
+  <div class="noise-overlay"></div>
+
+  <div class="main-content">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-brand">
+          <div class="nav-logo">Q</div>
+          <span class="nav-brand-text">QR<span>Forge</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#generator">Generator</a></li>
+          <li><a href="#bulk">Bulk</a></li>
+          <li><a href="#generator" class="nav-cta">Get Started</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          100% Free &bull; No Sign-Up &bull; No Limits
+        </div>
+        <h1>
+          Generate <span class="gradient-text">Beautiful QR Codes</span> in Seconds
+        </h1>
+        <p class="hero-subtitle">
+          Create stunning, customizable QR codes for URLs, WiFi, contacts, and more.
+          Download as PNG, SVG, or PDF. Free forever.
+        </p>
+        <div class="hero-actions">
+          <a href="#generator" class="btn btn-primary" id="hero-cta">
+            ⚡ Start Generating
+          </a>
+          <a href="#features" class="btn btn-secondary">
+            Learn More →
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">8+</div>
+            <div class="hero-stat-label">QR Types</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">∞</div>
+            <div class="hero-stat-label">Unlimited Use</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">3</div>
+            <div class="hero-stat-label">Export Formats</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features" id="features">
+      <div class="section-header">
+        <span class="section-label">Why QRForge?</span>
+        <h2 class="section-title">Everything You Need. Nothing You Don't.</h2>
+        <p class="section-subtitle">Professional-grade QR codes without the price tag or bloat.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3>8+ QR Code Types</h3>
+          <p>URLs, plain text, WiFi credentials, vCards, email, phone, SMS, and calendar events — all supported.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Full Customization</h3>
+          <p>Colors, dot styles, corner shapes, center logos, and adjustable sizes — make it yours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>Bulk Generation</h3>
+          <p>Paste a list or upload a CSV — generate hundreds of QR codes and download them all as a ZIP.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <h3>Multiple Export Formats</h3>
+          <p>Download as high-resolution PNG, scalable SVG, or print-ready PDF.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>Everything runs in your browser. No data ever leaves your device. No tracking. No servers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💸</div>
+          <h3>Free Forever</h3>
+          <p>No sign-ups, no subscriptions, no hidden fees. Professional QR codes, completely free.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GENERATOR ========== -->
+    <section class="generator" id="generator">
+      <div class="section-header">
+        <span class="section-label">Generator</span>
+        <h2 class="section-title">Create Your QR Code</h2>
+        <p class="section-subtitle">Select a type, enter your data, and customize.</p>
+      </div>
+
+      <div class="generator-container">
+        <!-- Tab Navigation -->
+        <div class="tab-nav" id="tab-nav">
+          <button class="tab-btn active" data-tab="url" id="tab-btn-url">
+            <span class="tab-icon">🔗</span> URL
+          </button>
+          <button class="tab-btn" data-tab="text" id="tab-btn-text">
+            <span class="tab-icon">📝</span> Text
+          </button>
+          <button class="tab-btn" data-tab="wifi" id="tab-btn-wifi">
+            <span class="tab-icon">📶</span> WiFi
+          </button>
+          <button class="tab-btn" data-tab="vcard" id="tab-btn-vcard">
+            <span class="tab-icon">👤</span> vCard
+          </button>
+          <button class="tab-btn" data-tab="email" id="tab-btn-email">
+            <span class="tab-icon">✉️</span> Email
+          </button>
+          <button class="tab-btn" data-tab="phone" id="tab-btn-phone">
+            <span class="tab-icon">📞</span> Phone
+          </button>
+          <button class="tab-btn" data-tab="sms" id="tab-btn-sms">
+            <span class="tab-icon">💬</span> SMS
+          </button>
+          <button class="tab-btn" data-tab="calendar" id="tab-btn-calendar">
+            <span class="tab-icon">📅</span> Calendar
+          </button>
+        </div>
+
+        <!-- Generator Body -->
+        <div class="generator-body">
+          <!-- Input Panel -->
+          <div class="input-panel">
+
+            <!-- URL Tab -->
+            <div class="tab-content active" id="tab-url">
+              <div class="input-group">
+                <label for="input-url">Website URL</label>
+                <input type="url" id="input-url" placeholder="https://example.com" autocomplete="off">
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- Text Tab -->
+            <div class="tab-content" id="tab-text">
+              <div class="input-group">
+                <label for="input-text">Your Text</label>
+                <textarea id="input-text" placeholder="Enter any text you want to encode..."></textarea>
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-text">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- WiFi Tab -->
+            <div class="tab-content" id="tab-wifi">
+              <div class="input-group">
+                <label for="input-wifi-ssid">Network Name (SSID)</label>
+                <input type="text" id="input-wifi-ssid" placeholder="MyWiFiNetwork" autocomplete="off">
+              </div>
+              <div class="input-group">
+                <label for="input-wifi-password">Password</label>
+                <input type="text" id="input-wifi-password" placeholder="Enter password" autocomplete="off">
+              </div>
+              <div class="input-group">
+                <label for="input-wifi-encryption">Encryption</label>
+                <select id="input-wifi-encryption">
+                  <option value="WPA">WPA/WPA2</option>
+                  <option value="WEP">WEP</option>
+                  <option value="nopass">None (Open)</option>
+                </select>
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-wifi">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- vCard Tab -->
+            <div class="tab-content" id="tab-vcard">
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="input-vcard-fname">First Name</label>
+                  <input type="text" id="input-vcard-fname" placeholder="John" autocomplete="off">
+                </div>
+                <div class="input-group">
+                  <label for="input-vcard-lname">Last Name</label>
+                  <input type="text" id="input-vcard-lname" placeholder="Doe" autocomplete="off">
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="input-vcard-org">Organization</label>
+                <input type="text" id="input-vcard-org" placeholder="Company Inc." autocomplete="off">
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="input-vcard-phone">Phone</label>
+                  <input type="tel" id="input-vcard-phone" placeholder="+1 555-123-4567" autocomplete="off">
+                </div>
+                <div class="input-group">
+                  <label for="input-vcard-email">Email</label>
+                  <input type="email" id="input-vcard-email" placeholder="john@example.com" autocomplete="off">
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="input-vcard-url">Website</label>
+                <input type="url" id="input-vcard-url" placeholder="https://example.com" autocomplete="off">
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-vcard">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- Email Tab -->
+            <div class="tab-content" id="tab-email">
+              <div class="input-group">
+                <label for="input-email-addr">Email Address</label>
+                <input type="email" id="input-email-addr" placeholder="recipient@example.com" autocomplete="off">
+              </div>
+              <div class="input-group">
+                <label for="input-email-subject">Subject</label>
+                <input type="text" id="input-email-subject" placeholder="Hello!" autocomplete="off">
+              </div>
+              <div class="input-group">
+                <label for="input-email-body">Message Body</label>
+                <textarea id="input-email-body" placeholder="Your message..." style="min-height:80px;"></textarea>
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-email">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- Phone Tab -->
+            <div class="tab-content" id="tab-phone">
+              <div class="input-group">
+                <label for="input-phone">Phone Number</label>
+                <input type="tel" id="input-phone" placeholder="+1 555-123-4567" autocomplete="off">
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-phone">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- SMS Tab -->
+            <div class="tab-content" id="tab-sms">
+              <div class="input-group">
+                <label for="input-sms-phone">Phone Number</label>
+                <input type="tel" id="input-sms-phone" placeholder="+1 555-123-4567" autocomplete="off">
+              </div>
+              <div class="input-group">
+                <label for="input-sms-message">Message</label>
+                <textarea id="input-sms-message" placeholder="Your SMS message..." style="min-height:80px;"></textarea>
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-sms">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+            <!-- Calendar Tab -->
+            <div class="tab-content" id="tab-calendar">
+              <div class="input-group">
+                <label for="input-cal-title">Event Title</label>
+                <input type="text" id="input-cal-title" placeholder="Team Meeting" autocomplete="off">
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="input-cal-start">Start Date & Time</label>
+                  <input type="datetime-local" id="input-cal-start">
+                </div>
+                <div class="input-group">
+                  <label for="input-cal-end">End Date & Time</label>
+                  <input type="datetime-local" id="input-cal-end">
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="input-cal-location">Location</label>
+                <input type="text" id="input-cal-location" placeholder="Conference Room A" autocomplete="off">
+              </div>
+              <div class="input-group">
+                <label for="input-cal-desc">Description</label>
+                <textarea id="input-cal-desc" placeholder="Event description..." style="min-height:60px;"></textarea>
+              </div>
+              <div class="generate-btn-wrapper">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-cal">
+                  ⚡ Generate QR Code
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Preview Panel -->
+          <div class="preview-panel">
+            <span class="preview-label">Live Preview</span>
+            <div class="qr-preview-box" id="qr-preview-box">
+              <div class="qr-placeholder" id="qr-placeholder">
+                <div class="qr-placeholder-icon">⬜</div>
+                <div class="qr-placeholder-text">Your QR code will<br>appear here</div>
+              </div>
+            </div>
+            <div class="download-actions" id="download-actions" style="display:none;">
+              <button class="btn btn-secondary btn-sm" onclick="downloadPNG()" id="dl-png">
+                📥 PNG
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="downloadSVG()" id="dl-svg">
+                📐 SVG
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="downloadPDF()" id="dl-pdf">
+                📄 PDF
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customization Panel -->
+        <div class="customization">
+          <div class="customization-toggle" id="custom-toggle" onclick="toggleCustomization()">
+            <h3>🎨 Customization Options</h3>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="customization-panel" id="custom-panel">
+            <div class="custom-grid">
+
+              <div class="input-group">
+                <label for="custom-dot-style">Dot Style</label>
+                <select id="custom-dot-style" onchange="updateQRStyle()">
+                  <option value="square">Square</option>
+                  <option value="dots" selected>Dots (Rounded)</option>
+                  <option value="rounded">Rounded</option>
+                  <option value="classy">Classy</option>
+                  <option value="classy-rounded">Classy Rounded</option>
+                  <option value="extra-rounded">Extra Rounded</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="custom-corner-style">Corner Style</label>
+                <select id="custom-corner-style" onchange="updateQRStyle()">
+                  <option value="square">Square</option>
+                  <option value="dot" selected>Rounded</option>
+                  <option value="extra-rounded">Extra Rounded</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label>Foreground Color</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="custom-fg-color" value="#000000" onchange="updateQRStyle()">
+                  <span class="color-hex" id="fg-hex">#000000</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label>Background Color</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="custom-bg-color" value="#ffffff" onchange="updateQRStyle()">
+                  <span class="color-hex" id="bg-hex">#ffffff</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="custom-size">Size</label>
+                <div class="range-wrapper">
+                  <div class="range-header">
+                    <span></span>
+                    <span class="range-value" id="size-value">1024px</span>
+                  </div>
+                  <input type="range" id="custom-size" min="256" max="2048" value="1024" step="128" onchange="updateQRStyle()" oninput="document.getElementById('size-value').textContent = this.value + 'px'">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="custom-error-correction">Error Correction</label>
+                <select id="custom-error-correction" onchange="updateQRStyle()">
+                  <option value="L">Low (7%)</option>
+                  <option value="M" selected>Medium (15%)</option>
+                  <option value="Q">Quartile (25%)</option>
+                  <option value="H">High (30%)</option>
+                </select>
+              </div>
+
+              <div class="input-group" style="grid-column: 1 / -1;">
+                <label>Center Logo (optional)</label>
+                <div class="logo-upload-area" id="logo-upload-area">
+                  <div class="logo-upload-icon">🖼️</div>
+                  <div class="logo-upload-text">Click or drag to upload a logo</div>
+                  <input type="file" id="logo-file-input" accept="image/*" onchange="handleLogoUpload(event)">
+                </div>
+                <div class="logo-preview" id="logo-preview">
+                  <img id="logo-preview-img" src="" alt="Logo preview">
+                  <span class="logo-name" id="logo-name"></span>
+                  <button class="logo-remove" onclick="removeLogo()" title="Remove logo">✕</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== BULK SECTION ========== -->
+    <section class="bulk-section" id="bulk">
+      <div class="section-header">
+        <span class="section-label">Bulk Generator</span>
+        <h2 class="section-title">Generate Hundreds at Once</h2>
+        <p class="section-subtitle">Paste one entry per line or upload a CSV file.</p>
+      </div>
+
+      <div class="bulk-container">
+        <div class="bulk-header">
+          <h2>📦 Bulk QR Codes</h2>
+          <div>
+            <label class="btn btn-secondary btn-sm" style="cursor:pointer;">
+              📁 Upload CSV
+              <input type="file" id="bulk-csv-upload" accept=".csv,.txt" style="display:none;" onchange="handleBulkCSV(event)">
+            </label>
+          </div>
+        </div>
+        <p class="bulk-instructions">
+          Enter one item per line. Each line will generate a separate QR code.
+          For URLs, just paste the link. For text, type your message. All QR codes will use your current customization settings.
+        </p>
+        <textarea class="bulk-textarea" id="bulk-input" placeholder="https://example.com&#10;https://github.com&#10;Hello, scan this QR code!&#10;WIFI:T:WPA;S:MyNetwork;P:password123;;&#10;..."></textarea>
+        <div class="bulk-actions">
+          <button class="btn btn-primary" onclick="generateBulk()" id="bulk-generate-btn">
+            ⚡ Generate All
+          </button>
+          <button class="btn btn-secondary" onclick="downloadBulkZip()" id="bulk-download-btn" disabled>
+            📦 Download ZIP
+          </button>
+          <span class="bulk-count" id="bulk-count">0 entries</span>
+        </div>
+        <div class="bulk-progress" id="bulk-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-text" id="progress-text">Generating...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">QR<span>Forge</span></div>
+        <p class="footer-text">Free, open-source QR code generator. No data leaves your browser.</p>
+        <div class="footer-links">
+          <a href="https://github.com/psquare346/Generate-QR-Code-for-free" target="_blank" rel="noopener">GitHub</a>
+          <a href="#generator">Generator</a>
+          <a href="#bulk">Bulk</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- App Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/download.js"></script>
+  <script src="js/bulk.js"></script>
+
+</body>
+</html>
