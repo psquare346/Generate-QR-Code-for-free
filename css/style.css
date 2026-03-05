@@ -1353,6 +1353,88 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* ===================================
+   FOOTER
+   =================================== */
+.footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.footer-brand span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--accent-cyan);
+}
+
+/* --- Buy Me a Coffee Button --- */
+.coffee-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: rgba(255, 221, 0, 0.08);
+  border: 1px solid rgba(255, 221, 0, 0.3);
+  border-radius: 100px;
+  color: #ffdd00;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.coffee-btn:hover {
+  background: rgba(255, 221, 0, 0.15);
+  border-color: rgba(255, 221, 0, 0.6);
+  box-shadow: 0 0 24px rgba(255, 221, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.coffee-btn:active {
+  transform: translateY(0);
+}
+
+/* ===================================
    SCROLLBAR
    =================================== */
 ::-webkit-scrollbar {

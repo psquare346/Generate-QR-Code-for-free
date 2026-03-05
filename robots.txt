@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psquare346.github.io/Generate-QR-Code-for-free/sitemap.xml
