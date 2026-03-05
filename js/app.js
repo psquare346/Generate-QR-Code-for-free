@@ -298,6 +298,26 @@ if (bulkInput) {
   });
 }
 
+// --- Label preview ---
+function getLabelText() {
+  return (document.getElementById('input-qr-label')?.value || '').trim();
+}
+
+function updateLabelPreview() {
+  const label = getLabelText();
+  const display = document.getElementById('qr-label-display');
+  const wrapper = document.querySelector('.qr-preview-wrapper');
+  if (label) {
+    display.textContent = label;
+    display.classList.add('has-label');
+    wrapper?.classList.add('has-label');
+  } else {
+    display.textContent = '';
+    display.classList.remove('has-label');
+    wrapper?.classList.remove('has-label');
+  }
+}
+
 // --- Enter key to generate ---
 document.querySelectorAll('.input-panel input').forEach(input => {
   input.addEventListener('keydown', (e) => {

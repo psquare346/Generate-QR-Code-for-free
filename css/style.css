@@ -45,7 +45,9 @@
 }
 
 /* --- Reset & Base --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -101,9 +103,19 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(50px, -30px) scale(1.1); }
-  66% { transform: translate(-30px, 20px) scale(0.95); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-30px, 20px) scale(0.95);
+  }
 }
 
 /* --- Noise texture overlay --- */
@@ -181,13 +193,19 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
+  background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%);
   animation: shimmer 3s ease-in-out infinite;
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-150%); }
-  50%, 100% { transform: translateX(150%); }
+  0% {
+    transform: translateX(-150%);
+  }
+
+  50%,
+  100% {
+    transform: translateX(150%);
+  }
 }
 
 .nav-brand-text {
@@ -257,8 +275,15 @@ body {
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-badge {
@@ -284,8 +309,15 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .hero h1 {
@@ -620,8 +652,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .input-group {
@@ -744,6 +783,43 @@ body {
 .qr-placeholder-text {
   font-size: 0.85rem;
   text-align: center;
+}
+
+/* --- QR Preview Wrapper with Label --- */
+.qr-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-label-display {
+  width: 280px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: #ffffff;
+  padding: 0;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-fast);
+  overflow: hidden;
+  max-height: 0;
+}
+
+.qr-label-display.has-label {
+  padding: 0.6rem 1rem;
+  max-height: 60px;
+  margin-top: -4px;
+}
+
+.qr-label-display.has-label+.qr-preview-box {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* When label is shown, round only top of QR box */
+.qr-preview-wrapper.has-label .qr-preview-box {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 /* --- Customization Panel --- */
@@ -1149,13 +1225,25 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(100px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 /* ===================================
@@ -1197,7 +1285,9 @@ input[type="range"]::-moz-range-thumb {
     font-size: 1.25rem;
   }
 
-  .features, .generator, .bulk-section {
+  .features,
+  .generator,
+  .bulk-section {
     padding: 4rem 1rem;
   }
 
@@ -1214,7 +1304,9 @@ input[type="range"]::-moz-range-thumb {
     font-size: 0.75rem;
   }
 
-  .input-panel, .preview-panel, .customization {
+  .input-panel,
+  .preview-panel,
+  .customization {
     padding: 1.5rem;
   }
 

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QRForge — Free QR Code Generator | URL, WiFi, vCard & More</title>
-  <meta name="description" content="Generate beautiful, customizable QR codes for free. Supports URLs, WiFi, vCard contacts, email, phone, SMS, calendar events & plain text. Download as PNG, SVG, or PDF.">
+  <meta name="description"
+    content="Generate beautiful, customizable QR codes for free. Supports URLs, WiFi, vCard contacts, email, phone, SMS, calendar events & plain text. Download as PNG, SVG, or PDF.">
 
   <!-- Open Graph / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="QRForge — Free QR Code Generator">
-  <meta property="og:description" content="Generate beautiful, customizable QR codes instantly. Supports 8+ formats. Free forever.">
+  <meta property="og:description"
+    content="Generate beautiful, customizable QR codes instantly. Supports 8+ formats. Free forever.">
   <meta property="og:image" content="assets/og-image.png">
   <meta property="og:url" content="https://psquare346.github.io/Generate-QR-Code-for-free/">
 
@@ -20,7 +23,8 @@
   <meta name="twitter:image" content="assets/og-image.png">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -31,6 +35,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
+
 <body>
 
   <!-- Animated Background -->
@@ -184,7 +189,8 @@
                 <input type="url" id="input-url" placeholder="https://example.com" autocomplete="off">
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -197,7 +203,8 @@
                 <textarea id="input-text" placeholder="Enter any text you want to encode..."></textarea>
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-text">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-text">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -222,7 +229,8 @@
                 </select>
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-wifi">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-wifi">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -259,7 +267,8 @@
                 <input type="url" id="input-vcard-url" placeholder="https://example.com" autocomplete="off">
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-vcard">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-vcard">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -280,7 +289,8 @@
                 <textarea id="input-email-body" placeholder="Your message..." style="min-height:80px;"></textarea>
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-email">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-email">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -293,7 +303,8 @@
                 <input type="tel" id="input-phone" placeholder="+1 555-123-4567" autocomplete="off">
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-phone">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-phone">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -310,7 +321,8 @@
                 <textarea id="input-sms-message" placeholder="Your SMS message..." style="min-height:80px;"></textarea>
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-sms">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-sms">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -341,7 +353,8 @@
                 <textarea id="input-cal-desc" placeholder="Event description..." style="min-height:60px;"></textarea>
               </div>
               <div class="generate-btn-wrapper">
-                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()" id="generate-btn-cal">
+                <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateQR()"
+                  id="generate-btn-cal">
                   ⚡ Generate QR Code
                 </button>
               </div>
@@ -352,11 +365,19 @@
           <!-- Preview Panel -->
           <div class="preview-panel">
             <span class="preview-label">Live Preview</span>
-            <div class="qr-preview-box" id="qr-preview-box">
-              <div class="qr-placeholder" id="qr-placeholder">
-                <div class="qr-placeholder-icon">⬜</div>
-                <div class="qr-placeholder-text">Your QR code will<br>appear here</div>
+            <div class="qr-preview-wrapper">
+              <div class="qr-preview-box" id="qr-preview-box">
+                <div class="qr-placeholder" id="qr-placeholder">
+                  <div class="qr-placeholder-icon">⬜</div>
+                  <div class="qr-placeholder-text">Your QR code will<br>appear here</div>
+                </div>
               </div>
+              <div class="qr-label-display" id="qr-label-display"></div>
+            </div>
+            <div class="input-group" style="width:100%; max-width:320px; margin-top:1rem;">
+              <label for="input-qr-label">Label / Caption (optional)</label>
+              <input type="text" id="input-qr-label" placeholder="e.g. Food Menu - B's Grocery" autocomplete="off"
+                oninput="updateLabelPreview()">
             </div>
             <div class="download-actions" id="download-actions" style="display:none;">
               <button class="btn btn-secondary btn-sm" onclick="downloadPNG()" id="dl-png">
@@ -425,7 +446,9 @@
                     <span></span>
                     <span class="range-value" id="size-value">1024px</span>
                   </div>
-                  <input type="range" id="custom-size" min="256" max="2048" value="1024" step="128" onchange="updateQRStyle()" oninput="document.getElementById('size-value').textContent = this.value + 'px'">
+                  <input type="range" id="custom-size" min="256" max="2048" value="1024" step="128"
+                    onchange="updateQRStyle()"
+                    oninput="document.getElementById('size-value').textContent = this.value + 'px'">
                 </div>
               </div>
 
@@ -474,15 +497,18 @@
           <div>
             <label class="btn btn-secondary btn-sm" style="cursor:pointer;">
               📁 Upload CSV
-              <input type="file" id="bulk-csv-upload" accept=".csv,.txt" style="display:none;" onchange="handleBulkCSV(event)">
+              <input type="file" id="bulk-csv-upload" accept=".csv,.txt" style="display:none;"
+                onchange="handleBulkCSV(event)">
             </label>
           </div>
         </div>
         <p class="bulk-instructions">
           Enter one item per line. Each line will generate a separate QR code.
-          For URLs, just paste the link. For text, type your message. All QR codes will use your current customization settings.
+          For URLs, just paste the link. For text, type your message. All QR codes will use your current customization
+          settings.
         </p>
-        <textarea class="bulk-textarea" id="bulk-input" placeholder="https://example.com&#10;https://github.com&#10;Hello, scan this QR code!&#10;WIFI:T:WPA;S:MyNetwork;P:password123;;&#10;..."></textarea>
+        <textarea class="bulk-textarea" id="bulk-input"
+          placeholder="https://example.com&#10;https://github.com&#10;Hello, scan this QR code!&#10;WIFI:T:WPA;S:MyNetwork;P:password123;;&#10;..."></textarea>
         <div class="bulk-actions">
           <button class="btn btn-primary" onclick="generateBulk()" id="bulk-generate-btn">
             ⚡ Generate All
@@ -525,4 +551,5 @@
   <script src="js/bulk.js"></script>
 
 </body>
+
 </html>
